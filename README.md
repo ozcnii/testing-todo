@@ -9,7 +9,8 @@
 
 ## strucrure
 
-- .src
+```
+├── src
   ├── components
   │ ├── todo-form.tsx
   │ ├── todo-item.tsx
@@ -25,5 +26,4 @@
   │ │ └── todo-types.ts
   │ └── index.ts
   └── README.md
-
-
+```
