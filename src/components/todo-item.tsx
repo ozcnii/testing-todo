@@ -20,7 +20,12 @@ export const TodoItem: FC<TodoItemProps> = memo(({ todo }) => {
 
   return (
     <>
-      <input type="checkbox" checked={todo.isDone} onChange={onChange} />
+      <input
+        data-testid="todo-item-checkbox"
+        type="checkbox"
+        checked={todo.isDone}
+        onChange={onChange}
+      />
       <span
         data-testid="todo-item-text"
         style={{
@@ -29,7 +34,9 @@ export const TodoItem: FC<TodoItemProps> = memo(({ todo }) => {
       >
         {todo.text}
       </span>
-      <button onClick={onRemove}>✖</button>
+      <button data-testid="todo-item-remove" onClick={onRemove}>
+        ✖
+      </button>
     </>
   );
 });

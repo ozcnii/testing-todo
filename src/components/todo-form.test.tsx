@@ -21,11 +21,13 @@ describe("todo-form", () => {
   });
 
   it("after form submit input should be clean", () => {
-    render(<TodoForm />);
-    const text = "some-text";
     const fakeDispatch = jest.fn();
     const mockedAddTodoAction = jest.spyOn(actions, "addTodo");
     mockedUseDispatch.mockReturnValue(fakeDispatch);
+
+    render(<TodoForm />);
+
+    const text = "some-text";
 
     userEvent.type(screen.getByPlaceholderText(/enter todo text/i), text);
     userEvent.click(screen.getByRole("button", { name: /add/i }));
@@ -44,6 +46,7 @@ describe("todo-form", () => {
     mockedUseDispatch.mockReturnValue(fakeDispatch);
 
     render(<TodoForm />);
+
     const button = screen.getByRole<HTMLButtonElement>("button", {
       name: /add/i,
     });
@@ -56,12 +59,13 @@ describe("todo-form", () => {
   });
 
   it("button should enabled if input not clean", () => {
-    render(<TodoForm />);
-    const text = "some-text";
-
     const fakeDispatch = jest.fn();
     const mockedAddTodoAction = jest.spyOn(actions, "addTodo");
     mockedUseDispatch.mockReturnValue(fakeDispatch);
+
+    render(<TodoForm />);
+
+    const text = "some-text";
 
     userEvent.type(screen.getByPlaceholderText(/enter todo text/i), text);
     const button = screen.getByRole<HTMLButtonElement>("button", {
