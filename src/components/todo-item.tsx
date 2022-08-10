@@ -22,6 +22,7 @@ export const TodoItem: FC<TodoItemProps> = memo(({ todo }) => {
     <>
       <input type="checkbox" checked={todo.isDone} onChange={onChange} />
       <span
+        data-testid="todo-item-text"
         style={{
           textDecoration: todo.isDone ? "line-through" : "none",
         }}

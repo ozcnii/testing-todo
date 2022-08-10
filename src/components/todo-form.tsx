@@ -6,7 +6,7 @@ export const TodoForm: FC = () => {
   const [value, setValue] = useState("");
   const dispatch = useAppDispatch();
 
-  const onSubmit = (event: FormEvent) => {
+  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const text = value.trim();
@@ -19,7 +19,11 @@ export const TodoForm: FC = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <input value={value} onChange={(event) => setValue(event.target.value)} />
+      <input
+        placeholder="Enter todo text"
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+      />
       <button disabled={!value}>add</button>
     </form>
   );

@@ -15,9 +15,9 @@ export const TodoList: FC = () => {
   }
 
   return (
-    <ul>
+    <ul data-testid="todo-list">
       {todos.map((todo) => (
-        <li key={todo.id}>
+        <li data-testid="todo-item" key={todo.id}>
           <TodoItem todo={todo} />
         </li>
       ))}
